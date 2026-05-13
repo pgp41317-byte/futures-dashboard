@@ -256,7 +256,7 @@ st.markdown("---")
 # ── News sentiment ────────────────────────────────────────────────────────────
 st.markdown('<div class="section-header">LATEST MARKET NEWS & SENTIMENT</div>', unsafe_allow_html=True)
 if headlines:
-    for h in headlines[:8]:
+    for h in headlines[:100]:
         cls   = news_cls(h["label"])
         badge = sentiment_badge(h["label"])
         st.markdown(

@@ -9,26 +9,48 @@ import streamlit as st
 from config import NEWS_FEEDS, POSITIVE_KEYWORDS, NEGATIVE_KEYWORDS
 
 
-@st.cache_data(ttl=120, show_spinner=False)
+@st.cache_data(ttl=300, show_spinner=False)
 def fetch_news() -> list:
+    from datetime import datetime, timedelta, timezone
+
     headlines = []
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=24)
+
     for url in NEWS_FEEDS:
         try:
             feed = feedparser.parse(url)
-            for entry in feed.entries[:8]:
-                title   = entry.get("title", "")
+
+            for entry in feed.entries[:50]:
+                title = entry.get("title", "")
                 summary = entry.get("summary", "")
-                text    = (title + " " + summary).lower()
-                score   = _score_text(text)
+
+                published = None
+                try:
+                    published = datetime(
+                        *entry.published_parsed[:6],
+                        tzinfo=timezone.utc
+                    )
+                except Exception:
+                    pass
+
+                if published and published < cutoff:
+                    continue
+
+                text = (title + " " + summary).lower()
+                score = _score_text(text)
+
                 headlines.append({
-                    "title":  title[:130],
+                    "title": title[:160],
                     "source": _domain(url),
-                    "score":  score,
-                    "label":  "POSITIVE" if score > 0 else ("NEGATIVE" if score < 0 else "NEUTRAL"),
+                    "score": score,
+                    "label": "POSITIVE" if score > 0 else ("NEGATIVE" if score < 0 else "NEUTRAL"),
+                    "published": published.strftime("%d-%b %H:%M") if published else "Recent",
                 })
+
         except Exception:
             pass
-    return headlines[:40]
+
+    return headlines[:100]
 
 
 def _score_text(text: str) -> int:
