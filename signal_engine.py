@@ -67,7 +67,7 @@ def scan_full_universe() -> dict:
     all_signals = []
     skipped     = []
 
-    for ticker in tickers[:100]:
+    for ticker in tickers:
         try:
             result = _analyse_stock(ticker, headlines)
             if result:

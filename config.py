@@ -16,7 +16,7 @@ ATR_T1_MULT  = 1.5
 ATR_T2_MULT  = 2.2
 
 # ── Refresh ────────────────────────────────────────────────────────────────
-REFRESH_INTERVAL = 60                 # seconds
+REFRESH_INTERVAL = 300                 # seconds
 
 # ── Index tickers ──────────────────────────────────────────────────────────
 NIFTY_TICKER      = "^NSEI"
@@ -59,7 +59,7 @@ SECTOR_MAP = {
                          "CANBK","UNIONBANK","PNB","AUBANK"],
     "IT":               ["TCS","INFY","WIPRO","HCLTECH","TECHM","MPHASIS","LTIM",
                          "PERSISTENT","COFORGE","OFSS"],
-    "Auto":             ["MARUTI","TATAMTRDVR","M&M","BAJAJ-AUTO","HEROMOTOCO","EICHERMOT",
+    "Auto":             ["MARUTI","M&M","BAJAJ-AUTO","HEROMOTOCO","EICHERMOT",
                          "ASHOKLEY","TVSMOTOR","MOTHERSON","BOSCHLTD"],
     "Pharma":           ["SUNPHARMA","CIPLA","DRREDDY","DIVISLAB","AUROPHARMA","LUPIN",
                          "BIOCON","ALKEM","TORNTPHARM","GLENMARK"],
