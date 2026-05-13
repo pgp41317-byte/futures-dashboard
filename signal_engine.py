@@ -46,7 +46,7 @@ def get_index_signal(ticker: str, label: str) -> dict:
         "reason":     "; ".join(reasons[:3]) or "Insufficient data",
     }
 
-
+@st.cache_data(ttl=300, show_spinner=False)
 # ─────────────────────────────────────────────────────────────────────────────
 # Full F&O universe scan (runs every refresh cycle)
 # ─────────────────────────────────────────────────────────────────────────────

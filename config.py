@@ -16,7 +16,8 @@ ATR_T1_MULT  = 1.5
 ATR_T2_MULT  = 2.2
 
 # ── Refresh ────────────────────────────────────────────────────────────────
-REFRESH_INTERVAL = 300                 # seconds
+REFRESH_INTERVAL = 5
+SCAN_CACHE_TTL = 300                 # seconds
 
 # ── Index tickers ──────────────────────────────────────────────────────────
 NIFTY_TICKER      = "^NSEI"
