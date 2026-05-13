@@ -10,80 +10,109 @@ def inject_css():
 
         html, body, [class*="css"] {
             font-family: 'IBM Plex Sans', sans-serif;
-            background-color: #0a0e14;
-            color: #c9d1d9;
+            background-color: #111827;
+            color: #f8fafc;
         }
-        .stApp { background: #0a0e14; }
+
+        .stApp {
+            background: #111827;
+            color: #f8fafc;
+        }
 
         .dash-title {
             font-family: 'IBM Plex Mono', monospace;
             font-size: 1.55rem;
             font-weight: 700;
-            color: #f0b429;
+            color: #facc15;
             letter-spacing: 2px;
-            border-bottom: 1px solid #f0b42940;
+            border-bottom: 1px solid #facc1555;
             padding-bottom: 10px;
             margin-bottom: 14px;
         }
 
         .sig-card {
-            background: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 8px;
+            background: #1f2937;
+            border: 1px solid #475569;
+            border-radius: 10px;
             padding: 14px 18px;
             margin-bottom: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
         }
+
         .sig-card h4 {
             margin: 0 0 4px;
             font-size: 0.72rem;
-            color: #8b949e;
+            color: #cbd5e1;
             letter-spacing: 1.5px;
             text-transform: uppercase;
         }
+
         .sig-card .val {
             font-family: 'IBM Plex Mono', monospace;
             font-size: 1.25rem;
             font-weight: 700;
+            color: #f8fafc;
         }
 
-        .buy-badge     { color: #3fb950; }
-        .sell-badge    { color: #f85149; }
-        .notrade-badge { color: #8b949e; }
-        .neutral-badge { color: #d29922; }
+        .buy-badge     { color: #22c55e; font-weight: 700; }
+        .sell-badge    { color: #ef4444; font-weight: 700; }
+        .notrade-badge { color: #eab308; font-weight: 700; }
+        .neutral-badge { color: #facc15; font-weight: 700; }
 
         .section-header {
             font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.78rem;
-            color: #f0b429;
+            font-size: 0.82rem;
+            color: #facc15;
             letter-spacing: 2px;
-            border-left: 3px solid #f0b429;
-            padding-left: 8px;
-            margin: 20px 0 10px;
+            border-left: 4px solid #facc15;
+            padding-left: 10px;
+            margin: 22px 0 12px;
             text-transform: uppercase;
+            font-weight: 700;
         }
 
         .news-card {
-            background: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 6px;
+            background: #1f2937;
+            border: 1px solid #475569;
+            border-radius: 8px;
             padding: 10px 14px;
-            margin-bottom: 6px;
-            font-size: 0.82rem;
+            margin-bottom: 8px;
+            font-size: 0.84rem;
             line-height: 1.45;
+            color: #f8fafc;
         }
-        .news-pos { border-left: 3px solid #3fb950; }
-        .news-neg { border-left: 3px solid #f85149; }
-        .news-neu { border-left: 3px solid #8b949e; }
+
+        .news-pos { border-left: 4px solid #22c55e; }
+        .news-neg { border-left: 4px solid #ef4444; }
+        .news-neu { border-left: 4px solid #eab308; }
 
         [data-testid="stMetricValue"] {
             font-family: 'IBM Plex Mono', monospace;
             font-size: 1.3rem !important;
+            color: #f8fafc !important;
         }
-        div[data-testid="column"] { padding: 0 4px; }
 
-        ::-webkit-scrollbar { width: 5px; }
-        ::-webkit-scrollbar-track { background: #0a0e14; }
-        ::-webkit-scrollbar-thumb { background: #30363d; border-radius: 3px; }
+        [data-testid="metric-container"] {
+            background-color: #1f2937;
+            border: 1px solid #475569;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        [data-testid="stDataFrame"] {
+            background-color: #1f2937;
+            border: 1px solid #475569;
+            border-radius: 10px;
+        }
+
+        div[data-testid="column"] {
+            padding: 0 4px;
+        }
+
+        ::-webkit-scrollbar { width: 7px; }
+        ::-webkit-scrollbar-track { background: #111827; }
+        ::-webkit-scrollbar-thumb { background: #64748b; border-radius: 4px; }
+
         </style>
         """,
         unsafe_allow_html=True,
